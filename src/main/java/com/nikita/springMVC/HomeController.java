@@ -14,16 +14,30 @@ public class HomeController {
 		return "index";
 	}
 	
-	@RequestMapping("addEmployee")
-	public String addEmployee(@ModelAttribute Employee emp) {			
-		return "result";
-		
-	}
-	
+//	Using Model attribute as parameter
 //	@RequestMapping("addEmployee")
-//	public String addEmployee(@ModelAttribute Employee emp, Model m) {
-//		m.addAttribute("employee", emp);			
+//	public String addEmployee(@ModelAttribute Employee emp) {			
 //		return "result";
 //		
 //	}
+	
+	
+//	Using request param and model object
+//	@RequestMapping("addEmployee")
+//	public String addEmployee(@RequestParam("username") String user, @RequestParam("password") String pass, Model m){
+//		Employee e = new Employee();
+//		e.setUsername(user);
+//		e.setPassword(pass);
+//		m.addAttribute("employee", e);
+//		return "result";
+//		
+//	}
+	
+//	Using model attribute and class object
+	@RequestMapping("addEmployee")
+	public String addEmployee(@ModelAttribute Employee emp, Model m) {
+		m.addAttribute("employee", emp);			
+		return "result";
+		
+	}
 }
