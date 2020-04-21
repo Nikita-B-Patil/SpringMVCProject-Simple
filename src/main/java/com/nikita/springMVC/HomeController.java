@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -13,13 +14,6 @@ public class HomeController {
 		
 		return "index";
 	}
-	
-//	Using Model attribute as parameter
-//	@RequestMapping("addEmployee")
-//	public String addEmployee(@ModelAttribute Employee emp) {			
-//		return "result";
-//		
-//	}
 	
 	
 //	Using request param and model object
@@ -33,11 +27,28 @@ public class HomeController {
 //		
 //	}
 	
-//	Using model attribute and class object
+//	Using model attribute and model object
+//	@RequestMapping("addEmployee")
+//	public String addEmployee(@ModelAttribute Employee emp, Model m) {
+//		m.addAttribute("employee", emp);			
+//		return "result";
+//		
+//	}
+	
+//	Using Model attribute as parameter
+//	@RequestMapping("addEmployee")
+//	public String addEmployee(@ModelAttribute("employee") Employee emp) {			
+//		return "result";
+//		
+//	}
+	
+	
+//	we can avoid using model attribute if the parameter name and the EL variable name in the jsp are same e.g employee
 	@RequestMapping("addEmployee")
-	public String addEmployee(@ModelAttribute Employee emp, Model m) {
-		m.addAttribute("employee", emp);			
+	public String addEmployee(Employee employee) {			
 		return "result";
 		
 	}
+	
+	
 }
