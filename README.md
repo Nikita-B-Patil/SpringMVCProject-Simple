@@ -1,4 +1,8 @@
 Spring MVC simple project
+Flow:
+web.xml --> dispatcher-servlet.xml -->(data) controller --> (data)view pages --> Client
+
+
 Steps for creating Spring MVC Project:
 1. Create a new Maven project with archtype webapp of springmvc
 2. Add server
@@ -15,9 +19,10 @@ Steps for creating Spring MVC Project:
   Add a bean tag to specify name spaces
   Add the base class where the controllers are placed
   Specify the annotation configuration
-  Add a bean tag to specify view page settings such as prefix, suffix
+  Add a bean tag to specify add a "View Resolver" and settings such as prefix, suffix
 6. Add the view pages
 7. Add the controller classes
+
 
 
 
